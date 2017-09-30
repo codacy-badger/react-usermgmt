@@ -9,11 +9,6 @@ import { AddUser } from './AddUser.jsx';
 const path = require('./common/path.js')['path']();
 
 class UserMgmt extends React.Component {
-    constructor() {
-        super();
-        // this.state = { whenWhereView: true, faqView: false };
-    }
-
     render() {
         return (
             <BrowserRouter basename={path}>
