@@ -55,6 +55,13 @@ p, li {
     line-height: 50px;
     padding: 0 24px;
     text-decoration: none;
+    transition: all 0.2s;
+}
+
+.header .menu a:hover {
+    background: #f1f1f1;
+    color: #4085c0;
+    text-shadow: none;
 }
 
 .footer {
