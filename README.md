@@ -1,5 +1,5 @@
 # react-usermgmt
-Sample "user management" React app.
+Sample "user management" React app utilizing Flux architecture.
 
 - - - -
 
