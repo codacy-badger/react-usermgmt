@@ -1,0 +1,33 @@
+.header {
+    color: #fff;
+    background: linear-gradient(#387bb4, #336b9b);
+    height: 50px;
+    text-shadow: 0 -1px #000;
+    .menu {
+        border-right: $light-blue-border;
+        display: inline-block;
+        list-style: none;
+        li {
+            border: {
+                left: $light-blue-border;
+                right: $dark-blue-border;
+            }
+            float: left;
+            line-height: 50px;
+            margin-bottom: 0;
+        }
+        a {
+            color: #fff;
+            display: inline-block;
+            line-height: 50px;
+            padding: 0 24px;
+            text-decoration: none;
+            transition: all 0.2s;
+            &:hover {
+                background: #f1f1f1;
+                color: $light-blue;
+                text-shadow: none;
+            }
+        }
+    }
+}

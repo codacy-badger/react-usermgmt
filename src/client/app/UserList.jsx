@@ -15,7 +15,7 @@ export class UserList extends React.Component {
         return (
             <div className="user-list container">
                 <h2>Current Users</h2>
-                <p className="t-heavy">{users} user{users !== 1 ? 's' : ''} found.</p>
+                <p className="t-heavy">{users} user{users !== 1 ? 's' : ''} found</p>
                 <div className="entries">
                     <div className="entry">
                         <img className="user-icon" alt="User Icon" src="public/images/male-icon.png" />
@@ -49,7 +49,7 @@ export class UserList extends React.Component {
                         <table className="user-info">
                             <tbody>
                                 <tr>
-                                    <th colSpan="2">Lauren Reynolds</th>
+                                    <th colSpan="2">Lauren Smith</th>
                                 </tr>
                                 <tr>
                                     <td>User Id</td>
@@ -61,7 +61,7 @@ export class UserList extends React.Component {
                                 </tr>
                                 <tr>
                                     <td>Username</td>
-                                    <td>jdoe</td>
+                                    <td>lsmith</td>
                                 </tr>
                                 <tr>
                                     <td>Gender</td>

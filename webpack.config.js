@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/client/public/js');
 const APP_DIR = path.resolve(__dirname, 'src/client/app');
+const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 
 const config = {
     entry: APP_DIR + '/index.jsx',
@@ -10,21 +11,28 @@ const config = {
         path: BUILD_DIR,
         filename: 'usermgmt-bundle.min.js'
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false },
-            output: { comments: false }
-        })
-    ],
     module: {
         loaders: [
             {
                 test: /\.jsx?/,
                 include: APP_DIR,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css-loader!sass-loader')
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('usermgmt-styles.min.css', {
+            allChunks: true
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false },
+            output: { comments: false }
+        })
+    ]
 };
 
-module.exports = config;
+module.exports = config; // @TODO: MINIMIZE THE SASS/CSS OUTPUT

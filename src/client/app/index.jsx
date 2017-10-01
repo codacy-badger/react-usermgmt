@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { UserList } from './UserList.jsx';
 import { AddUser } from './AddUser.jsx';
+require('../sass/style.scss');
 
 const path = require('./common/path.js')['path']();
 
