@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, 'src/client/app');
 const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
@@ -28,6 +29,10 @@ const config = {
         new ExtractTextPlugin('usermgmt-styles.min.css', {
             allChunks: true
         }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.min\.css$/,
+            cssProcessorOptions: { discardComments: { removeAll: true } }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false },
             output: { comments: false }
@@ -35,4 +40,4 @@ const config = {
     ]
 };
 
-module.exports = config; // @TODO: MINIMIZE THE SASS/CSS OUTPUT
+module.exports = config;
