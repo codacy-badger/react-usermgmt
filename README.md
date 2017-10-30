@@ -7,6 +7,7 @@ Sample "user management" React app utilizing Flux architecture.
 * React
 * ES6 + Babel
 * Webpack
+* Axios
 * Material-ui
 * React-router-dom
 * SASS

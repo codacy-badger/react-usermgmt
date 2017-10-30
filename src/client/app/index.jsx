@@ -36,10 +36,10 @@ class UserMgmt extends React.Component {
 
 const userMgmtTheme = {
     fontFamily: 'Droid Sans, sans-serif',
-    // palette: {
-    //     accent1Color: '#fff',
-    //     primary1Color: '#007bff'
-    // }
+    palette: {
+        accent1Color: '#fff',
+        primary1Color: '#387bb4'
+    }
 };
 
 const App = () => {
