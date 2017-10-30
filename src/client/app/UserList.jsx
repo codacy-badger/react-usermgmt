@@ -5,8 +5,11 @@ import FlatButton from 'material-ui/FlatButton';
 const axios = require('axios');
 const path = require('./common/path.js')['path']();
 
-// @TODO: MAKE 'this.state.users' DYNAMIC PER ACTUAL DATA LIST
-// @TODO: CREATE EACH ENTRY DYNAMICALLY BASED ON NUMBER OF USERS IN THE DATASTORE
+const UserMgmtAction = require('./actions/UserMgmtAction.js');
+require('./stores/AppStore.js');
+
+// https://facebook.github.io/flux/docs/in-depth-overview.html#content
+
 // @TODO: AUTO-ASSIGN IDs TO NEW USERS
 // @TODO: LET PEOPLE EDIT ALL THE THINGS (create action button w/ material-ui 'popover' menu [edit, remove])
 
@@ -31,6 +34,7 @@ export class UserList extends React.Component {
     }
 
     componentWillMount() {
+        UserMgmtAction.showMessage('Hello World!!');
         const handleError = err => {
             this.setState({ dialogOpen: true, loadError: err });
         };
