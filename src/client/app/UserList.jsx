@@ -2,13 +2,8 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-const axios = require('axios');
-const path = require('./common/path.js')['path']();
-
 const UserMgmtAction = require('./actions/UserMgmtAction.js');
-require('./stores/AppStore.js');
-
-// https://facebook.github.io/flux/docs/in-depth-overview.html#content
+const AppStore = require('./stores/AppStore.js');
 
 // @TODO: AUTO-ASSIGN IDs TO NEW USERS
 // @TODO: LET PEOPLE EDIT ALL THE THINGS (create action button w/ material-ui 'popover' menu [edit, remove])
@@ -16,35 +11,31 @@ require('./stores/AppStore.js');
 export class UserList extends React.Component {
     constructor() {
         super();
-        this.state = { dialogOpen: false, loadError: '', numUsers: 0, userList: [] };
-        this.getUserData = this.getUserData.bind(this);
+        const { error:e, numUsers:n, userList:l } = AppStore;
+        this.state = { dialogOpen: false, loadError: e, numUsers: n, userList: l };
         this.handleDialogClose = this.handleDialogClose.bind(this);
     }
-
-    getUserData() {
-        return axios.get(`${path}data/userData.json`);
-    }
-
-    // updateUserData() {
-
-    // }
 
     handleDialogClose() {
         this.setState({ dialogOpen: false });
     }
 
     componentWillMount() {
-        UserMgmtAction.showMessage('Hello World!!');
-        const handleError = err => {
-            this.setState({ dialogOpen: true, loadError: err });
+        const success = () => {
+            const { numUsers:n, userList:l } = AppStore;
+            this.setState({ numUsers: n, userList: l });
         };
-        return this.getUserData().then(resp => this.setState({ numUsers: resp.data.users.length, userList: resp.data.users })).catch(err => handleError(err));
+        const failure = () => {
+            const { error:e } = AppStore;
+            this.setState({ dialogOpen: true, loadError: e });
+        };
+        UserMgmtAction.grabUsers(success, failure);
     }
 
     render() {
         const { numUsers:num, userList:users } = this.state;
         const entries = users.map((user, index) => 
-            <div className="entry">
+            <div className="entry" key={index}>
                 <img className="user-icon" alt="User Icon" src={`public/images/${user.gender}-icon.png`} />
                 <table className="user-info">
                     <tbody>
