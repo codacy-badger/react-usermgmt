@@ -16,7 +16,7 @@ AppDispatcher.register(function(payload) {
 			AppStore.userList = l;
 			AppStore.numUsers = l.length;
 			AppStore.error = e;
-			AppStore.emitChange();
+			AppStore.emitChange(); // @TODO: DON'T THINK WE'RE LISTENING FOR CHANGE CORRECTLY TO UPDATE ALL THE THINGS...
 			break;
 	}
 });
