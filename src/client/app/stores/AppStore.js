@@ -1,8 +1,7 @@
 const AppDispatcher = require('../dispatcher/AppDispatcher.js');
 const EventEmitter = require('events').EventEmitter;
-const assign = require('object-assign');
 
-const AppStore = assign({}, EventEmitter.prototype, {
+const AppStore = Object.assign({}, EventEmitter.prototype, {
 	emitChange: function() { this.emit('change'); },
 	error: null,
 	numUsers: 0,

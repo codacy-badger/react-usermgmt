@@ -6,6 +6,7 @@ const UserMgmtAction = require('./actions/UserMgmtAction.js');
 const AppStore = require('./stores/AppStore.js');
 
 // @TODO: AUTO-ASSIGN IDs TO NEW USERS
+// @TODO: ERROR HANDLING IF 'userData.json' DOESN'T EXIST OR CURRENTLY HAS NO USERS
 // @TODO: LET PEOPLE EDIT ALL THE THINGS (create action button w/ material-ui 'popover' menu [edit, remove])
 
 export class UserList extends React.Component {
