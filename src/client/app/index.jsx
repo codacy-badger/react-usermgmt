@@ -7,7 +7,7 @@ import { UserList } from './UserList.jsx';
 import { AddUser } from './AddUser.jsx';
 require('../sass/style.scss');
 
-const path = require('./common/path.js')['path']();
+const path = require('./common/path.js')();
 
 class UserMgmt extends React.Component {
     render() {

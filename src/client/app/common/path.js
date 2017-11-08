@@ -1,6 +1,5 @@
-module.exports = {
-    path: function() {
-        const path = window.location.pathname;
-        return path;
-    }
+const path = () => {
+    return window.location.pathname;
 };
+
+module.exports = path;
