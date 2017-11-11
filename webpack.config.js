@@ -36,7 +36,8 @@ const config = {
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false },
             output: { comments: false }
-        })
+        }),
+        new webpack.optimize.AggressiveMergingPlugin()
     ]
 };
 
