@@ -34,6 +34,7 @@ const config = {
             cssProcessorOptions: { discardComments: { removeAll: true } }
         }),
         new webpack.optimize.UglifyJsPlugin({
+            cache: true,
             compress: { warnings: false },
             output: { comments: false }
         }),
