@@ -1,2 +1,0 @@
-# ErrorDocument 404 https://www.drzwebdev.com/webapps/react-usermgmt/
-ErrorDocument 404 http://localhost:8888/react-usermgmt/src/client/
