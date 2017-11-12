@@ -7,7 +7,7 @@ const APP_DIR = path.resolve(__dirname, 'src/client/app');
 const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 
 const config = {
-    entry: APP_DIR + '/index.jsx',
+    entry: `${APP_DIR}/index.jsx`,
     output: {
         path: BUILD_DIR,
         filename: 'usermgmt-bundle.min.js'
