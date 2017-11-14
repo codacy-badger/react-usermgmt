@@ -2,8 +2,8 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-const UserMgmtAction = require('./actions/UserMgmtAction.js');
-const AppStore = require('./stores/AppStore.js');
+const UserMgmtAction = require('../actions/UserMgmtAction.js');
+const AppStore = require('../stores/AppStore.js');
 
 // @TODO: AUTO-ASSIGN IDs TO NEW USERS
 // @TODO: ERROR HANDLING IF 'userData.json' DOESN'T EXIST OR CURRENTLY HAS NO USERS

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { UserList } from './UserList.jsx';
-import { AddUser } from './AddUser.jsx';
+import { UserList } from './components/UserList.jsx';
+import { AddUser } from './components/AddUser.jsx';
 require('../sass/style.scss');
 
 const path = require('./common/path.js')();
