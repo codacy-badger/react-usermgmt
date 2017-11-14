@@ -37,7 +37,7 @@ export class UserList extends React.Component {
         const { numUsers:num, userList:users } = this.state;
         const entries = users.map((user, index) => 
             <div className="entry" key={index}>
-                <img className="user-icon" alt="User Icon" src={`public/images/${user.gender}-icon.png`} />
+                <img className="user-icon" alt="User Icon" src={`images/${user.gender}-icon.png`} />
                 <table className="user-info">
                     <tbody>
                         <tr>
