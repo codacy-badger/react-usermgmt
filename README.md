@@ -11,3 +11,4 @@ Sample "user management" React app utilizing Flux architecture.
 * Material-ui
 * React-router-dom
 * SASS
+* Node + Express
