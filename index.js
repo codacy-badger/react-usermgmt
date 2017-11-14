@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const favicon = require('serve-favicon');
-const pkg = require('./package.json');
 
 // @TODO: FIGURE OUT WHY .gz WON'T SERVE UP
 // @TODO: ON NON '/' ROUTES, THE FAVICON STILL THROWS A 404 DESPITE THE FORCED 204 BELOW
@@ -38,5 +37,5 @@ app.use((req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log(`${pkg.name} booted up on localhost:3000`);
+    console.log('react-usermgmt booted up on localhost:3000');
 });
