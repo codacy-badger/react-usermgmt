@@ -3,9 +3,6 @@ const app = express();
 const path = require('path');
 const favicon = require('serve-favicon');
 
-// @TODO: FIGURE OUT WHY .gz WON'T SERVE UP
-// @TODO: ON NON '/' ROUTES, THE FAVICON STILL THROWS A 404 DESPITE THE FORCED 204 BELOW
-
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 
