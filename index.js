@@ -3,19 +3,16 @@ const app = express();
 const path = require('path');
 const favicon = require('serve-favicon');
 
-app.use(express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 
-app.get('*/favicon.ico', (req, res) => {
-    res.status(204);
-});
-
-app.get('/js/app.min.js', (req, res, next) => {
+app.get('*.min.js', (req, res, next) => {
     req.url = `${req.url}.gz`;
     res.set('Content-Encoding', 'gzip');
     res.set('Content-Type', 'text/javascript');
     next();
 });
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
