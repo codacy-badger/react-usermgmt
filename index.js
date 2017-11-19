@@ -1,9 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const favicon = require('serve-favicon');
-
-app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 
 app.get('*/app.min.js', (req, res, next) => {
     req.url = `${req.url}.gz`;
