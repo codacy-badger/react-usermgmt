@@ -11,12 +11,8 @@ app.get('*/app.min.js', (req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
+app.get(['/', '/add'], (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.get('/add', (req, res) => {
-    res.redirect('/');
 });
 
 app.use((req, res) => {

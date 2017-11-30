@@ -1,9 +1,8 @@
 const AppDispatcher = require('../dispatcher/AppDispatcher.js');
 const axios = require('axios');
-const path = require('../common/path.js')();
 
 const getUserData = () => {
-	return axios.get(`${path}data/userData.json`);
+	return axios.get('/data/userData.json');
 };
 
 const dispatchEvent = (list, err) => {

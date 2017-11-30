@@ -7,12 +7,10 @@ import { UserList } from './components/UserList.jsx';
 import { AddUser } from './components/AddUser.jsx';
 require('../sass/style.scss');
 
-const path = require('./common/path.js')();
-
 class UserMgmt extends React.Component {
     render() {
         return (
-            <BrowserRouter basename={path}>
+            <BrowserRouter basename="/">
                 <main className="content">
                     <header className="header">
                         <h1>AnonCorp User Management</h1>
