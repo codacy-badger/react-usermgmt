@@ -1,10 +1,12 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { UserInfoTable } from './modules/UserInfoTable.jsx';
 
 const UserMgmtAction = require('../actions/UserMgmtAction.js');
 const AppStore = require('../stores/AppStore.js');
 
+// @TODO: MOVE DIALOG TO INDEX.JSX AND USE THAT FOR GLOBAL ERROR MESSAGING
 // @TODO: AUTO-ASSIGN IDs TO NEW USERS
 // @TODO: ERROR HANDLING IF 'userData.json' DOESN'T EXIST OR CURRENTLY HAS NO USERS
 // @TODO: LET PEOPLE EDIT ALL THE THINGS (create action button w/ material-ui 'popover' menu [edit, remove])
@@ -35,46 +37,15 @@ export class UserList extends React.Component {
 
     render() {
         const { numUsers:num, userList:users } = this.state;
-        const entries = users.map((user, index) => 
-            <div className="entry" key={index}>
-                <img className="user-icon" alt="User Icon" src={`images/${user.gender}-icon.png`} />
-                <table className="user-info">
-                    <tbody>
-                        <tr>
-                            <th colSpan="2">{user.firstName} {user.lastName}</th>
-                        </tr>
-                        <tr>
-                            <td>User Id</td>
-                            <td>{user.userId}</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>{user.address}</td>
-                        </tr>
-                        <tr>
-                            <td>Username</td>
-                            <td>{user.username}</td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td>{user.gender.charAt(0).toUpperCase() + user.gender.slice(1)}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        );
-
+        const entries = users.map((user, index) => <UserInfoTable key={index} user={user} />);
         const actions = [
             <FlatButton label="Close" onClick={this.handleDialogClose} primary={true} />
         ];
-
         return (
             <div className="user-list container">
                 <h2>Current Users</h2>
                 <p className="t-heavy">{num} user{num !== 1 ? 's' : ''} found</p>
-                <div className="entries">
-                    {entries}
-                </div>
+                <div className="entries">{entries}</div>
                 <Dialog
                     actions={actions}
                     onRequestClose={this.handleDialogClose}
