@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+// @TODO: CREATE API ROUTES
+
 app.get('*/app.min.js', (req, res, next) => {
     req.url = `${req.url}.gz`;
     res.set('Content-Encoding', 'gzip');

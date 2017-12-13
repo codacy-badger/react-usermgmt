@@ -2,7 +2,7 @@ const AppDispatcher = require('../dispatcher/AppDispatcher.js');
 const axios = require('axios');
 
 const getUserData = () => {
-	return axios.get('/data/userData.json');
+	return axios.get('/data/userData.json'); // @TODO: CREATE AN API IN EXPRESS FOR THIS
 };
 
 const dispatchEvent = (list, err) => {
@@ -16,7 +16,9 @@ const dispatchEvent = (list, err) => {
 
 const UserMgmtAction = {
 	grabUsers: (success, failure) => {
-		return getUserData().then(resp => { dispatchEvent(resp.data.users); success(); }).catch(err => { dispatchEvent([], err); failure(); });
+		return getUserData()
+			.then(resp => { dispatchEvent(resp.data.users); success(); })
+			.catch(err => { dispatchEvent([], err); failure(); });
 	}
 };
 

@@ -8,7 +8,7 @@ const AppStore = Object.assign({}, EventEmitter.prototype, {
 	userList: []
 });
 
-AppDispatcher.register(function(payload) {
+AppDispatcher.register(payload => {
 	switch (payload.actionName) {
 		case 'grab-users':
 			const { error:e, userList:l } = payload;
