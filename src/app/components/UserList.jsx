@@ -14,8 +14,7 @@ const AppStore = require('../stores/AppStore.js');
 export class UserList extends React.Component {
     constructor() {
         super();
-        const { error:e, numUsers:n, userList:l } = AppStore;
-        this.state = { dialogOpen: false, loadError: e, numUsers: n, userList: l };
+        this.state = { dialogOpen: false, loadError: null, numUsers: 0, userList: [] };
         this.handleDialogClose = this.handleDialogClose.bind(this);
     }
 
@@ -32,6 +31,11 @@ export class UserList extends React.Component {
             const { error:e } = AppStore;
             this.setState({ dialogOpen: true, loadError: e });
         };
+        const changeHandler = () => {
+            const { error:e, numUsers:n, userList:l } = AppStore;
+            this.setState({ dialogOpen: false, loadError: e, numUsers: n, userList: l });
+        };
+        AppStore.on('change', changeHandler);
         UserMgmtAction.grabUsers(success, failure);
     }
 
@@ -50,8 +54,10 @@ export class UserList extends React.Component {
                     actions={actions}
                     onRequestClose={this.handleDialogClose}
                     open={this.state.dialogOpen}
-                    title={`There was an error grabbing the user list data => ${this.state.loadError}`}
-                />
+                    title="Whoops..."
+                >
+                    There was an error grabbing the user list data.
+                </Dialog>
             </div>
         );
     }

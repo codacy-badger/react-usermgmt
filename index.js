@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const apiRoutes = require('./routes/api');
 
-// @TODO: CREATE API ROUTES
+global.__dirname = __dirname;
 
 app.get('*/app.min.js', (req, res, next) => {
     req.url = `${req.url}.gz`;
@@ -16,6 +17,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get(['/', '/add'], (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
+
+app.use('/api', apiRoutes);
 
 app.use((req, res) => {
     res.status(404);

@@ -10,12 +10,12 @@ const AppStore = Object.assign({}, EventEmitter.prototype, {
 
 AppDispatcher.register(payload => {
 	switch (payload.actionName) {
-		case 'grab-users':
+		case 'get-users':
 			const { error:e, userList:l } = payload;
 			AppStore.userList = l;
 			AppStore.numUsers = l.length;
 			AppStore.error = e;
-			AppStore.emitChange(); // @TODO: DON'T THINK WE'RE LISTENING FOR CHANGE CORRECTLY TO UPDATE ALL THE THINGS...
+			AppStore.emitChange();
 			break;
 	}
 });

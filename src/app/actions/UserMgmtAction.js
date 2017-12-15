@@ -2,12 +2,13 @@ const AppDispatcher = require('../dispatcher/AppDispatcher.js');
 const axios = require('axios');
 
 const getUserData = () => {
-	return axios.get('/data/userData.json'); // @TODO: CREATE AN API IN EXPRESS FOR THIS
+	// return axios.get('/data/userData.json');
+	return axios.get('/api/users');
 };
 
 const dispatchEvent = (list, err) => {
 	AppDispatcher.dispatch({
-		actionName: 'grab-users',
+		actionName: 'get-users',
 		error: err,
 		numUsers: list.length,
 		userList: list
