@@ -2,7 +2,6 @@ const AppDispatcher = require('../dispatcher/AppDispatcher.js');
 const axios = require('axios');
 
 const getUserData = () => {
-	// return axios.get('/data/userData.json');
 	return axios.get('/api/users');
 };
 
