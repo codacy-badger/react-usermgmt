@@ -14,7 +14,7 @@ const AppStore = require('../stores/AppStore.js');
 export class UserList extends React.Component {
     constructor() {
         super();
-        this.state = { dialogOpen: false, loadError: null, numUsers: 0, userList: [] };
+        this.state = { dialogOpen: false, error: null, numUsers: 0, userList: [] };
         this.handleDialogClose = this.handleDialogClose.bind(this);
     }
 
@@ -29,11 +29,11 @@ export class UserList extends React.Component {
         };
         const failure = () => {
             const { error:e } = AppStore;
-            this.setState({ dialogOpen: true, loadError: e });
+            this.setState({ dialogOpen: true, error: e });
         };
         const changeHandler = () => {
             const { error:e, numUsers:n, userList:l } = AppStore;
-            this.setState({ dialogOpen: false, loadError: e, numUsers: n, userList: l });
+            this.setState({ dialogOpen: false, error: e, numUsers: n, userList: l });
         };
         AppStore.on('change', changeHandler);
         UserMgmtAction.grabUsers(success, failure);
