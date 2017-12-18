@@ -10,14 +10,14 @@ const AppStore = Object.assign({}, EventEmitter.prototype, {
 
 AppDispatcher.register(payload => {
 	switch (payload.actionName) {
-		case 'get-users':
+		case 'GET_USERS':
 			const { error:e, userList:l } = payload;
 			AppStore.userList = l;
 			AppStore.numUsers = l.length;
 			AppStore.error = e;
-			AppStore.emitChange();
 			break;
 	}
+	AppStore.emitChange();
 });
 
 module.exports = AppStore;

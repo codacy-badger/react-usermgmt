@@ -7,7 +7,7 @@ const getUserData = () => {
 
 const dispatchEvent = (list, err) => {
 	AppDispatcher.dispatch({
-		actionName: 'get-users',
+		actionName: 'GET_USERS',
 		error: err,
 		numUsers: list.length,
 		userList: list
@@ -15,9 +15,9 @@ const dispatchEvent = (list, err) => {
 };
 
 const UserMgmtAction = {
-	grabUsers: (success, failure) => {
+	getUsers: (failure) => {
 		return getUserData()
-			.then(resp => { dispatchEvent(resp.data.users); success(); })
+			.then(resp => dispatchEvent(resp.data.users))
 			.catch(err => { dispatchEvent([], err); failure(); });
 	}
 };

@@ -23,10 +23,6 @@ export class UserList extends React.Component {
     }
 
     componentWillMount() {
-        const success = () => {
-            const { numUsers:n, userList:l } = AppStore;
-            this.setState({ numUsers: n, userList: l });
-        };
         const failure = () => {
             const { error:e } = AppStore;
             this.setState({ dialogOpen: true, error: e });
@@ -36,7 +32,7 @@ export class UserList extends React.Component {
             this.setState({ dialogOpen: false, error: e, numUsers: n, userList: l });
         };
         AppStore.on('change', changeHandler);
-        UserMgmtAction.grabUsers(success, failure);
+        UserMgmtAction.getUsers(failure);
     }
 
     render() {
