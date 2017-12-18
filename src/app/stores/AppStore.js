@@ -15,9 +15,9 @@ AppDispatcher.register(payload => {
 			AppStore.userList = l;
 			AppStore.numUsers = l.length;
 			AppStore.error = e;
+			AppStore.emitChange();
 			break;
 	}
-	AppStore.emitChange();
 });
 
 module.exports = AppStore;

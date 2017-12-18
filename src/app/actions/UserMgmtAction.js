@@ -15,7 +15,7 @@ const dispatchEvent = (list, err) => {
 };
 
 const UserMgmtAction = {
-	getUsers: (failure) => {
+	getUsers: failure => {
 		return getUserData()
 			.then(resp => dispatchEvent(resp.data.users))
 			.catch(err => { dispatchEvent([], err); failure(); });
