@@ -25,6 +25,8 @@ app.use((req, res) => {
     res.sendFile(path.join(__dirname, '/public/404.html'));
 });
 
-app.listen(3000, () => {
-    console.log('react-usermgmt booted up on port 3000');
+const port = process.env.port || 3000;
+
+app.listen(port, () => {
+    console.log(`react-usermgmt booted up on port ${port}`);
 });
