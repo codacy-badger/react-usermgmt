@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const apiRoutes = require('./routes/api');
+const port = process.env.port || 3000;
 
 global.__dirname = __dirname;
 
@@ -24,8 +25,6 @@ app.use((req, res) => {
     res.status(404);
     res.sendFile(path.join(__dirname, '/public/404.html'));
 });
-
-const port = process.env.port || 3000;
 
 app.listen(port, () => {
     console.log(`react-usermgmt booted up on port ${port}`);
