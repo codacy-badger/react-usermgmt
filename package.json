@@ -9,7 +9,6 @@
   },
   "author": "dzervoudakes",
   "license": "MIT",
-  "homepage": "https://www.drzwebdev.com/webapps/react-usermgmt",
   "devDependencies": {
     "axios": "^0.17.0",
     "babel-core": "^6.26.0",
