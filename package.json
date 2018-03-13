@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/dzervoudakes/react-usermgmt.git"
   },
-  "author": "",
+  "author": "dzervoudakes",
   "license": "MIT",
   "homepage": "https://www.drzwebdev.com/webapps/react-usermgmt",
   "devDependencies": {
