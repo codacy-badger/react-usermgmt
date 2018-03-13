@@ -34,11 +34,6 @@ const config = {
             assetNameRegExp: /\.min\.css$/,
             cssProcessorOptions: { discardComments: { removeAll: true } }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            cache: true,
-            compress: { warnings: false },
-            output: { comments: false }
-        }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new CompressionPlugin({
             asset: 'js/app.min.js.gz',
