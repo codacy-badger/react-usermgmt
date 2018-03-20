@@ -34,7 +34,11 @@ const config = {
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.min\.css$/,
-            cssProcessorOptions: { discardComments: { removeAll: true } }
+            cssProcessorOptions: {
+                discardComments: {
+                    removeAll: true
+                }
+            }
         }),
         new UglifyJsPlugin({
             sourceMap: true,
