@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { AddUser, UserList } from './components';
-require('../sass/style.scss');
+import '../sass/style.scss';
 
 class UserMgmt extends React.Component {
     render() {
