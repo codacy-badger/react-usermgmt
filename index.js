@@ -3,7 +3,7 @@ const path = require('path');
 const apiRoutes = require('./routes/api');
 
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 
 global.__dirname = __dirname;
 
