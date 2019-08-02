@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "address": "112 Salamander Ave, Denver, CO 80203",
+            "firstName": "Don",
+            "gender": "male",
+            "lastName": "Johnson",
+            "id": "fdbcc8db-ff79-4f06-a714-ef3443cdc4bd",
+            "username": "djohnson"
+        },
+        {
+            "address": "224 Beech St, Lakewood, CO 80228",
+            "firstName": "Lauren",
+            "gender": "female",
+            "lastName": "Smith",
+            "id": "f6ea6b86-1733-4192-a318-73632ec53df8",
+            "username": "lsmith"
+        },
+        {
+            "address": "3559 Tennyson St, Denver, CO 80212",
+            "firstName": "Drake",
+            "gender": "male",
+            "lastName": "Sommers",
+            "id": "6712a15c-6a31-4fea-a8a4-1ca5df9b2c7c",
+            "username": "dsommers"
+        }
+    ]
+}

@@ -1,0 +1,273 @@
+{
+	"id": "9fd4cc68-2510-4591-92ef-30af35e5b978",
+	"name": "User Management",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"7cbe204b-0e06-44c8-a989-3874d00c7912",
+		"448df9b7-108b-40b7-b3df-d30d90c81564",
+		"f0eb816e-b9d2-4aa7-a3b2-8f8df7085556",
+		"c83826a0-91a8-40a4-ba08-7577ff670ecf",
+		"c3aa506f-7c06-458b-983c-6ac7f2a93b9c",
+		"cb19ab59-132f-4e82-9f0d-a04e844c74cb"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "448df9b7-108b-40b7-b3df-d30d90c81564",
+			"name": "Create User",
+			"url": "{{domain}}/api/users",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "93df9114-27f8-4380-972a-b64c77f1f9f1",
+						"exec": [
+							"const { response: resp } = pm;",
+							"const jsonData = resp.json();",
+							"const { user } = jsonData;",
+							"",
+							"pm.environment.set('userId', user.id);",
+							"",
+							"pm.test('user successfully created', () => {",
+							"    pm.expect(resp).to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n    \"address\": \"1725 Slough Ave, Scranton, PA\",\n    \"firstName\": \"Michael\",\n    \"gender\": \"male\",\n    \"id\": \"{{$guid}}\",\n    \"lastName\": \"Scott\",\n    \"username\": \"thatswhatshesaid17\"\n}\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "7cbe204b-0e06-44c8-a989-3874d00c7912",
+			"name": "Get Users",
+			"url": "{{domain}}/api/users",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "456f9837-09dd-46c4-a07e-d0598874d9ce",
+						"exec": [
+							"const { response: resp } = pm;",
+							"const jsonData = resp.json();",
+							"const { users } = jsonData;",
+							"",
+							"pm.test('users successfully retrieved', () => {",
+							"    pm.expect(resp).to.have.status(200);",
+							"    pm.expect(Array.isArray(users)).to.equal(true);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c3aa506f-7c06-458b-983c-6ac7f2a93b9c",
+			"name": "Get User",
+			"url": "{{domain}}/api/users/{{userId}}",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "396c9a64-eb71-494d-bd4a-20694ea8b380",
+						"exec": [
+							"const { response: resp } = pm;",
+							"const jsonData = resp.json();",
+							"const { user } = jsonData;",
+							"",
+							"pm.test('user successfully retrieved', () => {",
+							"    pm.expect(resp).to.have.status(200);",
+							"    pm.expect(user.lastName).to.equal(\"Schrute\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c83826a0-91a8-40a4-ba08-7577ff670ecf",
+			"name": "Update User",
+			"url": "{{domain}}/api/users/{{userId}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21992911-a593-4c3a-be51-6f1157742faa",
+						"exec": [
+							"const { response: resp } = pm;",
+							"const jsonData = resp.json();",
+							"const { user } = jsonData;",
+							"",
+							"pm.test('user successfully updated', () => {",
+							"    pm.expect(resp).to.have.status(200);",
+							"    pm.expect(user.firstName).to.equal(\"Dwight\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n    \"id\": \"{{$guid}}\",\n    \"firstName\": \"Dwight\",\n    \"lastName\": \"Schrute\",\n    \"username\": \"bearsbeatsbattlestargalactica\",\n    \"gender\": \"male\",\n    \"address\": \"Schrute Farm\"\n}\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cb19ab59-132f-4e82-9f0d-a04e844c74cb",
+			"name": "Delete User",
+			"url": "{{domain}}/api/users/{{userId}}",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": null,
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const { response: resp } = pm;",
+							"",
+							"pm.test('user successfully deleted', () => {",
+							"    pm.expect(resp).to.have.status(200);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f0eb816e-b9d2-4aa7-a3b2-8f8df7085556",
+			"name": "Create Users",
+			"url": "{{domain}}/api/users",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c2528f1-5596-4a06-915c-a2b50090823c",
+						"exec": [
+							"const { response: resp } = pm;",
+							"const jsonData = resp.json();",
+							"const { users } = jsonData;",
+							"",
+							"pm.test('users successfully created', () => {",
+							"    pm.expect(resp).to.have.status(201);",
+							"    pm.expect(Array.isArray(users)).to.equal(true);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n    \"users\": [\n        {\n            \"address\": \"999 18th St, Denver, CO 80202\",\n            \"firstName\": \"David\",\n            \"gender\": \"male\",\n            \"lastName\": \"Berns\",\n            \"id\": \"{{$guid}}\",\n            \"username\": \"mcfakerson\"\n        },\n        {\n            \"address\": \"981 Bellaire St, Denver, CO 80220\",\n            \"firstName\": \"Linsday\",\n            \"gender\": \"female\",\n            \"lastName\": \"Vetell\",\n            \"id\": \"{{$guid}}\",\n            \"username\": \"lmichellevetell\"\n        }\n    ]\n}\n",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
