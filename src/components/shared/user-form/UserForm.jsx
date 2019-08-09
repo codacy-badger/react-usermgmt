@@ -103,7 +103,7 @@ const UserForm = ({
 		<Formik
 			initialValues={initialValues}
 			onSubmit={handleSubmit}
-			enableReinitialize={true}
+			enableReinitialize
 			validateOnBlur={false}
 			validateOnChange={false}
 			validationSchema={validationSchema}

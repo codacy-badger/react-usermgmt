@@ -14,6 +14,10 @@ const propTypes = {
 	field: fieldProps.isRequired
 };
 
+const defaultProps = {
+	error: undefined
+};
+
 const FormSelect = ({ error, label, options, field }) => {
 	const styles = makeStyles(theme => ({
 		formControl: {
@@ -39,5 +43,6 @@ const FormSelect = ({ error, label, options, field }) => {
 };
 
 FormSelect.propTypes = propTypes;
+FormSelect.defaultProps = defaultProps;
 
 export default FormSelect;

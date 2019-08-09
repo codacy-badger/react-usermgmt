@@ -1,5 +1,3 @@
-'use strict';
-
 const HttpStatus = require('./HttpStatus');
 const UserModel = require('../models/UserModel');
 
@@ -53,12 +51,14 @@ class Validator {
 			if (!model[key] || typeof model[key] !== typeof UserModel[key]) {
 				this.errorStatus = HttpStatus.UNPROCESSABLE_ENTITY;
 				this.violations.push('One or more user objects are invalid.');
+
 				return false;
 			}
 
 			if (!genders.includes(gender)) {
 				this.errorStatus = HttpStatus.UNPROCESSABLE_ENTITY;
 				this.violations.push("Gender: please specify 'male', 'female' or 'other'.");
+
 				return false;
 			}
 		}

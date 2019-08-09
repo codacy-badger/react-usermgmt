@@ -25,12 +25,15 @@ class UserList extends React.Component {
 	}
 
 	toggleView = () => {
-		this.setState({ isAdminView: !this.state.isAdminView });
+		this.setState(prevState => ({ isAdminView: !prevState.isAdminView }));
 	};
 
 	render() {
 		const { isAdminView } = this.state;
-		const { users } = this.props.userContext;
+		const {
+			userContext: { users }
+		} = this.props;
+
 		const numUsers = users.length;
 
 		const entries =

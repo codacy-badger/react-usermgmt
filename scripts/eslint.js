@@ -1,6 +1,4 @@
-'use strict';
-
-const CLIEngine = require('eslint').CLIEngine;
+const { CLIEngine } = require('eslint');
 const chalk = require('chalk');
 const ora = require('ora');
 

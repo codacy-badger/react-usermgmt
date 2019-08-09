@@ -1,5 +1,3 @@
-'use strict';
-
 const HttpStatus = Object.freeze({
 	CONTINUE: 100,
 	SWITCHING_PROTOCOLS: 101,

@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const webpackDev = require('webpack-dev-middleware');
 const webpackHot = require('webpack-hot-middleware');

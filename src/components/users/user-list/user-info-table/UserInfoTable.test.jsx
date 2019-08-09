@@ -7,6 +7,15 @@ import UserInfoTable from './UserInfoTable';
 jest.mock('@common/contexts/modal-context/WithModalContext');
 
 describe('UserInfoTable', () => {
+	const mockUser = {
+		id: '12345',
+		address: '123 Wall Ave',
+		firstName: 'Pink',
+		lastName: 'Floyd',
+		gender: 'other',
+		username: 'darkside1973'
+	};
+
 	const setup = () => {
 		const props = {
 			deleteUser: jest.fn(),
@@ -25,15 +34,6 @@ describe('UserInfoTable', () => {
 
 		const wrapper = shallow(<UserInfoTable {...props} />);
 		return { wrapper, props };
-	};
-
-	const mockUser = {
-		id: '12345',
-		address: '123 Wall Ave',
-		firstName: 'Pink',
-		lastName: 'Floyd',
-		gender: 'other',
-		username: 'darkside1973'
 	};
 
 	it('renders the user icon, personal information and actions', () => {

@@ -1,5 +1,3 @@
-'use strict';
-
 const jest = require('jest');
 
 process.env.BABEL_ENV = 'test';

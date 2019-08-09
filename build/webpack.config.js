@@ -1,5 +1,3 @@
-'use strict';
-
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
 

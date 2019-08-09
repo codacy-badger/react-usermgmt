@@ -12,6 +12,7 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
+		'airbnb',
 		'plugin:jest/recommended',
 		'plugin:jsx-a11y/recommended',
 		'plugin:react/recommended',
@@ -30,6 +31,19 @@ module.exports = {
 			rules: {
 				'jest/no-jest-import': OFF
 			}
+		},
+		{
+			files: ['server/**/*.js'],
+			rules: {
+				'global-require': OFF,
+				'no-underscore-dangle': OFF
+			}
+		},
+		{
+			files: ['build/webpack.config.js'],
+			rules: {
+				'global-require': OFF
+			}
 		}
 	],
 	parser: 'babel-eslint',
@@ -43,11 +57,15 @@ module.exports = {
 	plugins: ['react', 'import', 'react-hooks', 'prettier'],
 	rules: {
 		'arrow-parens': [ERROR, 'as-needed'],
+		'class-methods-use-this': OFF,
 		'comma-dangle': [ERROR, 'never'],
 		'comma-spacing': [ERROR, { 'before': false, 'after': true }],
+		'consistent-return': OFF,
 		'curly': ERROR,
 		'eol-last': [ERROR, 'always'],
 		'import/dynamic-import-chunkname': ERROR,
+		'import/no-extraneous-dependencies': OFF,
+		'import/no-dynamic-require': OFF,
 		'import/no-unresolved': ERROR,
 		'import/order': [ERROR, {
 			groups: [
@@ -62,6 +80,7 @@ module.exports = {
 		'linebreak-style': OFF,
 		'no-console': WARN,
 		'no-param-reassign': ERROR,
+		'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
 		'no-undef': ERROR,
 		'no-unused-vars': ERROR,
 		'prefer-const': ERROR,
@@ -116,7 +135,8 @@ module.exports = {
 			}
 		}],
 		'react-hooks/rules-of-hooks': ERROR,
-		'react-hooks/exhaustive-deps': WARN
+		'react-hooks/exhaustive-deps': WARN,
+		'require-await': ERROR
 	},
 	settings: {
 		'import/resolver': {

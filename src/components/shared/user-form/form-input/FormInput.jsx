@@ -11,6 +11,10 @@ const propTypes = {
 	field: fieldProps.isRequired
 };
 
+const defaultProps = {
+	error: undefined
+};
+
 const FormInput = ({ error, label, field }) => {
 	const styles = makeStyles(theme => ({
 		textField: {
@@ -32,5 +36,6 @@ const FormInput = ({ error, label, field }) => {
 };
 
 FormInput.propTypes = propTypes;
+FormInput.defaultProps = defaultProps;
 
 export default FormInput;

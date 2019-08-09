@@ -35,29 +35,33 @@ class NavBar extends React.Component {
 		</ul>
 	);
 
-	renderMobile = () => (
-		<>
-			<div className="icon-button-container">
-				<IconButton onClick={this.handleClick} color="inherit">
-					<MenuIcon />
-				</IconButton>
-			</div>
-			<Menu
-				classes={{ paper: 'mobile-menu' }}
-				anchorEl={this.state.anchorEl}
-				keepMounted
-				open={Boolean(this.state.anchorEl)}
-				onClose={this.handleClose}
-			>
-				<MenuItem onClick={this.handleClose} classes={{ root: 'list-item' }}>
-					<NavLink to="/">View All Users</NavLink>
-				</MenuItem>
-				<MenuItem onClick={this.handleClose} classes={{ root: 'list-item' }}>
-					<NavLink to="/new-user">New User</NavLink>
-				</MenuItem>
-			</Menu>
-		</>
-	);
+	renderMobile = () => {
+		const { anchorEl } = this.state;
+
+		return (
+			<>
+				<div className="icon-button-container">
+					<IconButton onClick={this.handleClick} color="inherit">
+						<MenuIcon />
+					</IconButton>
+				</div>
+				<Menu
+					classes={{ paper: 'mobile-menu' }}
+					anchorEl={anchorEl}
+					keepMounted
+					open={Boolean(anchorEl)}
+					onClose={this.handleClose}
+				>
+					<MenuItem onClick={this.handleClose} classes={{ root: 'list-item' }}>
+						<NavLink to="/">View All Users</NavLink>
+					</MenuItem>
+					<MenuItem onClick={this.handleClose} classes={{ root: 'list-item' }}>
+						<NavLink to="/new-user">New User</NavLink>
+					</MenuItem>
+				</Menu>
+			</>
+		);
+	};
 
 	render() {
 		return (

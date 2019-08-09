@@ -8,6 +8,15 @@ import UserInfoTableContainer from './user-info-table';
 jest.mock('@common/contexts/user-context/WithUserContext');
 
 describe('UserList', () => {
+	const mockUser = {
+		id: '12345',
+		address: '123 Wall Ave',
+		firstName: 'Pink',
+		lastName: 'Floyd',
+		gender: 'other',
+		username: 'darkside1973'
+	};
+
 	const setup = isMount => {
 		const props = {
 			userContext: {
@@ -21,15 +30,6 @@ describe('UserList', () => {
 			: shallow(<UserList {...props} />);
 
 		return { wrapper, props };
-	};
-
-	const mockUser = {
-		id: '12345',
-		address: '123 Wall Ave',
-		firstName: 'Pink',
-		lastName: 'Floyd',
-		gender: 'other',
-		username: 'darkside1973'
 	};
 
 	it('renders the header and subtext', () => {

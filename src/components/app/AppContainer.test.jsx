@@ -30,7 +30,7 @@ describe('AppContainer', () => {
 		let counter = 0;
 		wrapper.instance().source = {
 			cancel: jest.fn(() => {
-				counter++;
+				counter += 1;
 			})
 		};
 

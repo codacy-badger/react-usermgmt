@@ -29,16 +29,17 @@ class UserInfoTable extends React.Component {
 	}
 
 	toggleEditMode = () => {
-		this.setState({ isEditMode: !this.state.isEditMode });
+		this.setState(prevState => ({ isEditMode: !prevState.isEditMode }));
 	};
 
 	deleteUser = async () => {
+		const { userId } = this.state;
 		const {
 			deleteUser,
 			modalContext: { closeModal }
 		} = this.props;
 
-		await deleteUser(this.state.userId);
+		await deleteUser(userId);
 		closeModal();
 	};
 
@@ -55,8 +56,13 @@ class UserInfoTable extends React.Component {
 	};
 
 	render() {
-		const { address, firstName, gender, id, lastName, username } = this.props.user;
-		return !this.state.isEditMode ? (
+		const { isEditMode } = this.state;
+		const {
+			user,
+			user: { address, firstName, gender, id, lastName, username }
+		} = this.props;
+
+		return !isEditMode ? (
 			<div className="table-entry">
 				<MediaQuery query="(min-width: 36.25rem)">
 					<img
@@ -109,11 +115,7 @@ class UserInfoTable extends React.Component {
 			</div>
 		) : (
 			<div className="update-user-form">
-				<UserForm
-					variant="update"
-					initialValues={this.props.user}
-					callback={this.toggleEditMode}
-				/>
+				<UserForm variant="update" initialValues={user} callback={this.toggleEditMode} />
 				<Button
 					onClick={this.toggleEditMode}
 					color="secondary"

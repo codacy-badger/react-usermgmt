@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const { readFile, writeFile } = require('jsonfile');
 const HttpStatus = require('../utils/HttpStatus');
@@ -35,6 +33,7 @@ class UserService {
 	getUser(req, res) {
 		try {
 			const { id } = req.params;
+
 			readFile(this.dataSource, (err, obj) => {
 				if (!err) {
 					const { users: userList } = obj;
@@ -67,9 +66,6 @@ class UserService {
 				res.status(errorStatus);
 				res.send({ error: violations.join(' ') });
 			} else {
-				const { users } = req.body;
-				const isArray = Array.isArray(users);
-
 				readFile(this.dataSource, (err, obj) => {
 					if (!err) {
 						let payload = obj;
@@ -117,6 +113,7 @@ class UserService {
 	updateUser(req, res) {
 		try {
 			const { id } = req.params;
+
 			readFile(this.dataSource, (err, obj) => {
 				if (!err) {
 					const { body: updatedUser } = req;
@@ -133,7 +130,10 @@ class UserService {
 							let index = null;
 
 							userList.filter(user => {
-								user.id === id && (index = userList.indexOf(user));
+								if (user.id === id) {
+									index = userList.indexOf(user);
+								}
+
 								return user.id === id;
 							});
 
@@ -158,6 +158,7 @@ class UserService {
 	deleteUser(req, res) {
 		try {
 			const { id } = req.params;
+
 			readFile(this.dataSource, (err, obj) => {
 				if (!err) {
 					const { users: userList } = obj;
@@ -167,7 +168,10 @@ class UserService {
 						let index = null;
 
 						userList.filter(user => {
-							user.id === id && (index = userList.indexOf(user));
+							if (user.id === id) {
+								index = userList.indexOf(user);
+							}
+
 							return user.id === id;
 						});
 
@@ -192,9 +196,9 @@ class UserService {
 			if (!err) {
 				res.status(status);
 				const { users } = req.body;
+
 				if (Array.isArray(users)) {
 					res.status(HttpStatus.CREATED);
-					const { users } = req.body;
 					res.send({ users });
 				} else {
 					res.send({ user: req.body });

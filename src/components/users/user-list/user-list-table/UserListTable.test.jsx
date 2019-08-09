@@ -5,15 +5,6 @@ import UserListTable from './UserListTable';
 jest.mock('@common/contexts/user-context/WithUserContext');
 
 describe('UserListTable', () => {
-	const setup = () => {
-		const props = {
-			users: [mockUser]
-		};
-
-		const wrapper = mount(<UserListTable {...props} />);
-		return { wrapper, props };
-	};
-
 	const mockUser = {
 		id: '12345',
 		address: '123 Wall Ave',
@@ -21,6 +12,15 @@ describe('UserListTable', () => {
 		lastName: 'Floyd',
 		gender: 'other',
 		username: 'darkside1973'
+	};
+
+	const setup = () => {
+		const props = {
+			users: [mockUser]
+		};
+
+		const wrapper = mount(<UserListTable {...props} />);
+		return { wrapper, props };
 	};
 
 	it('renders the appropriate columns', () => {

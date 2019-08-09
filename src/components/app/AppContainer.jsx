@@ -38,14 +38,16 @@ class AppContainer extends React.Component {
 	};
 
 	render() {
+		const { users, error } = this.state;
+
 		return (
 			<UserContext.Provider
 				value={{
-					users: this.state.users,
+					users,
 					getUsers: this.getUsers
 				}}
 			>
-				<App error={this.state.error} />
+				<App error={error} />
 			</UserContext.Provider>
 		);
 	}

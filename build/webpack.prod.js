@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const { CleanWebpackPlugin: CleanPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

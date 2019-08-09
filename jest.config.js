@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
 	collectCoverageFrom: [
 		'<rootDir>/src/**/*.{js,jsx}',

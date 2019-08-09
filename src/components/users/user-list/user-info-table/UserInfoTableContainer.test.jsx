@@ -12,6 +12,15 @@ jest.mock('@common/contexts/toast-context/WithToastContext');
 jest.mock('@common/contexts/user-context/WithUserContext');
 
 describe('UserInfoTableContainer', () => {
+	const mockUser = {
+		id: '12345',
+		address: '123 Wall Ave',
+		firstName: 'Pink',
+		lastName: 'Floyd',
+		gender: 'other',
+		username: 'darkside1973'
+	};
+
 	const setup = () => {
 		const props = {
 			toastContext: {
@@ -32,15 +41,6 @@ describe('UserInfoTableContainer', () => {
 		return { wrapper, props };
 	};
 
-	const mockUser = {
-		id: '12345',
-		address: '123 Wall Ave',
-		firstName: 'Pink',
-		lastName: 'Floyd',
-		gender: 'other',
-		username: 'darkside1973'
-	};
-
 	it('renders the UserInfoTable', () => {
 		const { wrapper } = setup();
 		expect(wrapper.find(UserInfoTable).exists()).toBe(true);
@@ -51,7 +51,7 @@ describe('UserInfoTableContainer', () => {
 		let counter = 0;
 		wrapper.instance().source = {
 			cancel: jest.fn(() => {
-				counter++;
+				counter += 1;
 			})
 		};
 

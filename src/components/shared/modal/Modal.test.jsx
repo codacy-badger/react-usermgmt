@@ -43,7 +43,9 @@ describe('Modal', () => {
 
 	it('renders the optional button when the action is present', () => {
 		let counter = 0;
-		const { wrapper } = setup(() => counter++);
+		const { wrapper } = setup(() => {
+			counter += 1;
+		});
 
 		wrapper
 			.find(Button)

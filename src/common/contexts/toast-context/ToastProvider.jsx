@@ -12,16 +12,16 @@ class ToastProvider extends React.Component {
 
 		this.state = {
 			isToastOpen: false,
-			toastVariant: 'info',
-			toastMessage: ''
+			variant: 'info',
+			message: ''
 		};
 	}
 
-	openToast = (toastVariant, toastMessage) => {
-		if (!toastVariant || !toastMessage) {
+	openToast = (variant, message) => {
+		if (!variant || !message) {
 			throw new Error('Toast arguments "variant" and "message" are both required.');
 		}
-		this.setState({ isToastOpen: true, toastVariant, toastMessage });
+		this.setState({ isToastOpen: true, variant, message });
 	};
 
 	closeToast = () => {
@@ -29,17 +29,20 @@ class ToastProvider extends React.Component {
 	};
 
 	render() {
+		const { isToastOpen, message, variant } = this.state;
+		const { children } = this.props;
+
 		return (
 			<ToastContext.Provider
 				value={{
-					isToastOpen: this.state.isToastOpen,
 					openToast: this.openToast,
 					closeToast: this.closeToast,
-					message: this.state.toastMessage,
-					variant: this.state.toastVariant
+					isToastOpen,
+					message,
+					variant
 				}}
 			>
-				{this.props.children}
+				{children}
 			</ToastContext.Provider>
 		);
 	}

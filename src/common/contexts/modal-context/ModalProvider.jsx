@@ -12,7 +12,7 @@ class ModalProvider extends React.Component {
 
 		this.state = {
 			isModalOpen: false,
-			modalContent: {
+			content: {
 				title: '',
 				message: '',
 				action: null
@@ -26,7 +26,7 @@ class ModalProvider extends React.Component {
 		}
 		this.setState({
 			isModalOpen: true,
-			modalContent: { title, message, action }
+			content: { title, message, action }
 		});
 	};
 
@@ -35,16 +35,19 @@ class ModalProvider extends React.Component {
 	};
 
 	render() {
+		const { isModalOpen, content } = this.state;
+		const { children } = this.props;
+
 		return (
 			<ModalContext.Provider
 				value={{
-					isModalOpen: this.state.isModalOpen,
 					openModal: this.openModal,
 					closeModal: this.closeModal,
-					content: this.state.modalContent
+					isModalOpen,
+					content
 				}}
 			>
-				{this.props.children}
+				{children}
 			</ModalContext.Provider>
 		);
 	}

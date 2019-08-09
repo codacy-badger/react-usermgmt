@@ -19,6 +19,15 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('UserForm', () => {
+	const mockUser = {
+		id: '12345',
+		address: '123 Wall Ave',
+		firstName: 'Pink',
+		lastName: 'Floyd',
+		gender: 'other',
+		username: 'darkside1973'
+	};
+
 	const setup = propOverrides => {
 		const props = {
 			callback: jest.fn(),
@@ -43,15 +52,6 @@ describe('UserForm', () => {
 
 		const wrapper = shallow(<UserForm {...props} />);
 		return { wrapper, props };
-	};
-
-	const mockUser = {
-		id: '12345',
-		address: '123 Wall Ave',
-		firstName: 'Pink',
-		lastName: 'Floyd',
-		gender: 'other',
-		username: 'darkside1973'
 	};
 
 	it('passes the correct values to Formik', () => {

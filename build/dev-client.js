@@ -1,5 +1,3 @@
-'use strict';
-
 const devClient = require('webpack-hot-middleware/client');
 
 devClient.setOptionsAndConnect({

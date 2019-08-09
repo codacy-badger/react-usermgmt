@@ -1,5 +1,3 @@
-'use strict';
-
 const stylelint = require('stylelint');
 const chalk = require('chalk');
 const ora = require('ora');

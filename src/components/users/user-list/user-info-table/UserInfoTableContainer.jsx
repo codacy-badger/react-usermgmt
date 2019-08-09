@@ -41,7 +41,9 @@ class UserInfoTableContainer extends React.Component {
 	};
 
 	render() {
-		return <UserInfoTable deleteUser={this.deleteUser} user={this.props.user} />;
+		const { user } = this.props;
+
+		return <UserInfoTable deleteUser={this.deleteUser} user={user} />;
 	}
 }
 
