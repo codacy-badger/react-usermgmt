@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ModalContext = React.createContext({
-	isModalOpen: false,
 	openModal: () => {},
 	closeModal: () => {},
+	isModalOpen: false,
 	content: {
 		title: '',
 		message: '',

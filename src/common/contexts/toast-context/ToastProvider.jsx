@@ -21,6 +21,7 @@ class ToastProvider extends React.Component {
 		if (!variant || !message) {
 			throw new Error('Toast arguments "variant" and "message" are both required.');
 		}
+
 		this.setState({ isToastOpen: true, variant, message });
 	};
 

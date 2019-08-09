@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ToastContext = React.createContext({
-	isToastOpen: false,
 	message: '',
 	variant: 'info',
+	isToastOpen: false,
 	openToast: () => {},
 	closeToast: () => {}
 });

@@ -24,6 +24,7 @@ class ModalProvider extends React.Component {
 		if (!title || !message) {
 			throw new Error('Modal arguments "title" and "message" are both required.');
 		}
+
 		this.setState({
 			isModalOpen: true,
 			content: { title, message, action }
