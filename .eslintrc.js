@@ -89,6 +89,7 @@ module.exports = {
 		'react/jsx-closing-bracket-location': [ERROR, 'line-aligned'],
 		'react/jsx-curly-brace-presence': [ERROR, 'never'],
 		'react/jsx-curly-spacing': [ERROR, { when: 'never', children: true }],
+		'react/jsx-filename-extension': ERROR,
 		'react/no-array-index-key': ERROR,
 		'react/no-unused-prop-types': ERROR,
 		'react/no-unused-state': ERROR,
