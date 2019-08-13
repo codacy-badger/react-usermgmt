@@ -5,6 +5,7 @@ import Header from './Header';
 describe('Header', () => {
 	const setup = () => {
 		const wrapper = shallow(<Header />);
+
 		return { wrapper };
 	};
 

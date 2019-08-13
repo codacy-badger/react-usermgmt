@@ -23,7 +23,11 @@ describe('Modal', () => {
 		};
 
 		const wrapper = shallow(<Modal {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('displays the dialog title and message', () => {

@@ -30,7 +30,11 @@ describe('FormSelect', () => {
 		};
 
 		const wrapper = shallow(<FormSelect {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the Material UI Select and other label', () => {

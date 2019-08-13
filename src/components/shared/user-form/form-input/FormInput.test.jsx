@@ -17,7 +17,11 @@ describe('FormInput', () => {
 		};
 
 		const wrapper = shallow(<FormInput {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the Material UI TextField', () => {

@@ -6,6 +6,7 @@ import LoadingIndicator from './LoadingIndicator';
 describe('LoadingIndicator', () => {
 	const setup = () => {
 		const wrapper = shallow(<LoadingIndicator />);
+
 		return { wrapper };
 	};
 

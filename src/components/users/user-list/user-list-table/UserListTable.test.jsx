@@ -20,7 +20,11 @@ describe('UserListTable', () => {
 		};
 
 		const wrapper = mount(<UserListTable {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the appropriate columns', () => {

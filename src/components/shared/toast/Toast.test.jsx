@@ -18,7 +18,11 @@ describe('Toast', () => {
 		};
 
 		const wrapper = shallow(<Toast {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('displays the snackbar content', () => {

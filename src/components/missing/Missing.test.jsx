@@ -10,6 +10,7 @@ describe('Missing', () => {
 				<Missing />
 			</Router>
 		);
+
 		return { wrapper };
 	};
 

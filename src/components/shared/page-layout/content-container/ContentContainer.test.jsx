@@ -13,7 +13,11 @@ describe('ContentContainer', () => {
 				<div id="test-div">hello world</div>
 			</ContentContainer>
 		);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the provided children', () => {

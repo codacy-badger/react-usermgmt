@@ -29,7 +29,10 @@ describe('UserList', () => {
 			? mount(<UserList {...props} />)
 			: shallow(<UserList {...props} />);
 
-		return { wrapper, props };
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the header and subtext', () => {

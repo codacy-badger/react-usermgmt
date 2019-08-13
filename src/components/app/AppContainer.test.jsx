@@ -11,6 +11,7 @@ jest.mock('@services/user-service');
 describe('AppContainer', () => {
 	const setup = () => {
 		const wrapper = shallow(<AppContainer />);
+
 		return { wrapper };
 	};
 

@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 describe('NavBar', () => {
 	const setup = () => {
 		const wrapper = shallow(<NavBar />);
+
 		return { wrapper };
 	};
 

@@ -10,7 +10,11 @@ describe('SectionHeader', () => {
 		};
 
 		const wrapper = shallow(<SectionHeader {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the header and subtext content', () => {

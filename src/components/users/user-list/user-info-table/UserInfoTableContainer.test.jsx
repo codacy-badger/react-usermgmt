@@ -38,7 +38,11 @@ describe('UserInfoTableContainer', () => {
 		};
 
 		const wrapper = shallow(<UserInfoTableContainer {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the UserInfoTable', () => {

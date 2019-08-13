@@ -10,6 +10,7 @@ describe('ToastProvider', () => {
 				<p id="text">foo</p>
 			</ToastProvider>
 		);
+
 		return { wrapper };
 	};
 

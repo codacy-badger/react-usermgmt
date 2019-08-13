@@ -10,6 +10,7 @@ describe('ModalProvider', () => {
 				<p id="text">foo</p>
 			</ModalProvider>
 		);
+
 		return { wrapper };
 	};
 

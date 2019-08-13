@@ -5,6 +5,7 @@ import Footer from './Footer';
 describe('Footer', () => {
 	const setup = () => {
 		const wrapper = shallow(<Footer />);
+
 		return { wrapper };
 	};
 

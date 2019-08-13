@@ -6,8 +6,8 @@ import dynamicImport from './DynamicImport';
 describe('dynamicImport', () => {
 	const setup = () => {
 		const DynamicImport = dynamicImport('path');
-
 		const wrapper = shallow(<DynamicImport />);
+
 		return { wrapper };
 	};
 

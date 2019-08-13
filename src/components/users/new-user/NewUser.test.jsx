@@ -10,6 +10,7 @@ describe('NewUser', () => {
 				<NewUser />
 			</Router>
 		);
+
 		return { wrapper };
 	};
 

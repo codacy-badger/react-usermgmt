@@ -33,7 +33,11 @@ describe('UserInfoTable', () => {
 		};
 
 		const wrapper = shallow(<UserInfoTable {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the user icon, personal information and actions', () => {

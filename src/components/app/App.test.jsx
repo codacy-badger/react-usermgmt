@@ -15,7 +15,11 @@ describe('App', () => {
 		};
 
 		const wrapper = shallow(<App {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('renders the global pieces of the UI', () => {

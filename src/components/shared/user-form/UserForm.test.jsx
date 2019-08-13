@@ -51,7 +51,11 @@ describe('UserForm', () => {
 		};
 
 		const wrapper = shallow(<UserForm {...props} />);
-		return { wrapper, props };
+
+		return {
+			wrapper,
+			props
+		};
 	};
 
 	it('passes the correct values to Formik', () => {

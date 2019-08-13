@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import { withModalContext } from '@common/contexts/modal-context';
 import { modalContextProps } from '@common/prop-types';
+import './Modal.scss';
 
 const propTypes = {
 	modalContext: modalContextProps.isRequired
@@ -20,7 +21,7 @@ const Modal = ({ modalContext }) => {
 	} = modalContext;
 
 	return (
-		<Dialog onBackdropClick={closeModal} open={isModalOpen}>
+		<Dialog onBackdropClick={closeModal} open={isModalOpen} classes={{ paper: 'dialog' }}>
 			<DialogTitle>{title}</DialogTitle>
 			<DialogContent>
 				<DialogContentText>{message}</DialogContentText>
