@@ -1,0 +1,77 @@
+version: 2.1
+
+jobs:
+  dependencies:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+  test:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+      - restore_cache:
+          key: v1-output
+      - run: npm run test
+      # - run: npm run test:codacy
+  eslint:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+      - run: npm run lint
+  stylelint:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+      - run: npm run stylelint
+  build:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "package.json" }}
+      - restore_cache:
+          key: v1-output
+      - run: npm run build
+      - save_cache:
+          key: v1-output
+          paths:
+            - dist
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - dependencies
+      - test:
+          requires:
+            - dependencies
+      - eslint:
+          requires:
+            - dependencies
+      - stylelint:
+          requires:
+            - dependencies
+      - build:
+          requires:
+            - dependencies
+            - test
+            - eslint
+            - stylelint

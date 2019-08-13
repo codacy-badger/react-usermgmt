@@ -1,6 +1,7 @@
 # User Management
 > Sample user management React app leveraging [Material UI](https://material-ui.com/).
 
+[![CircleCI branch](https://img.shields.io/circleci/project/github/dzervoudakes/react-usermgmt/master.svg)](https://circleci.com/gh/dzervoudakes/react-usermgmt/tree/master)
 [![Prettier badge](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
 ## Build Scripts
