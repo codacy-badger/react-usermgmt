@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { userProps } from '@common/prop-types';
+import { userProps } from '@src/common/prop-types';
 
 const propTypes = {
 	users: PropTypes.arrayOf(userProps).isRequired

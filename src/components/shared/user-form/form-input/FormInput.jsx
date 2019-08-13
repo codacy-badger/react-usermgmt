@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { fieldProps } from '@common/prop-types';
+import { fieldProps } from '@src/common/prop-types';
 
 const propTypes = {
 	error: PropTypes.string,

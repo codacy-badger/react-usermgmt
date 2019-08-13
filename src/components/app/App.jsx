@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-import { ModalProvider } from '@common/contexts/modal-context';
-import { ToastProvider } from '@common/contexts/toast-context';
 import Modal from '@shared/modal';
 import Toast from '@shared/toast';
-import Header from '@components/header';
-import Footer from '@components/footer';
-import Missing from '@components/missing';
-import routes from '@routes/app-routes';
+import { ModalProvider } from '@src/common/contexts/modal-context';
+import { ToastProvider } from '@src/common/contexts/toast-context';
+import Header from '@src/components/header';
+import Footer from '@src/components/footer';
+import Missing from '@src/components/missing';
+import routes from '@src/routes/app-routes';
 import './App.scss';
 
 const propTypes = {

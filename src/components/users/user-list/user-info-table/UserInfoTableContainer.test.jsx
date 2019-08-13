@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Api from '@api/Api';
-import UserService from '@services/user-service';
+import Api from '@src/api/Api';
+import UserService from '@src/services/user-service';
 import UserInfoTableContainer from './UserInfoTableContainer';
 import UserInfoTable from './UserInfoTable';
 
 jest.mock('axios');
-jest.mock('@api/Api');
-jest.mock('@services/user-service');
-jest.mock('@common/contexts/toast-context/WithToastContext');
-jest.mock('@common/contexts/user-context/WithUserContext');
+jest.mock('@src/api/Api');
+jest.mock('@src/services/user-service');
+jest.mock('@src/common/contexts/toast-context/WithToastContext');
+jest.mock('@src/common/contexts/user-context/WithUserContext');
 
 describe('UserInfoTableContainer', () => {
 	const mockUser = {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import axios from 'axios';
-import UserService from '@services/user-service';
-import { UserContext } from '@common/contexts/user-context';
+import UserService from '@src/services/user-service';
+import { UserContext } from '@src/common/contexts/user-context';
 import AppContainer from './AppContainer';
 
 jest.mock('axios');
-jest.mock('@services/user-service');
+jest.mock('@src/services/user-service');
 
 describe('AppContainer', () => {
 	const setup = () => {

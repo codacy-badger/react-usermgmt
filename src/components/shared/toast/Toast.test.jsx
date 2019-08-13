@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import Toast from './Toast';
 
-jest.mock('@common/contexts/toast-context/WithToastContext');
+jest.mock('@src/common/contexts/toast-context/WithToastContext');
 
 describe('Toast', () => {
 	const setup = () => {

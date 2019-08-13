@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import Button from '@material-ui/core/Button';
 import FormWrapper from './FormWrapper';
 
-jest.mock('@common/contexts/modal-context/WithModalContext');
+jest.mock('@src/common/contexts/modal-context/WithModalContext');
 jest.mock('react-router-dom', () => ({
 	withRouter: Component => Component
 }));

@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Container from '@material-ui/core/Container';
-import Header from '@components/header';
-import Footer from '@components/footer';
 import Modal from '@shared/modal';
 import Toast from '@shared/toast';
+import Footer from '@src/components/footer';
+import Header from '@src/components/header';
 import App from './App';
 
 describe('App', () => {

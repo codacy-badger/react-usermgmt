@@ -6,10 +6,10 @@ import TrashIcon from '@material-ui/icons/DeleteOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import UserForm from '@shared/user-form';
-import { withModalContext } from '@common/contexts/modal-context';
-import { userProps, modalContextProps } from '@common/prop-types';
-import maleIcon from '@assets/images/male-icon.png';
-import femaleIcon from '@assets/images/female-icon.png';
+import { withModalContext } from '@src/common/contexts/modal-context';
+import { userProps, modalContextProps } from '@src/common/prop-types';
+import maleIcon from '@src/assets/images/male-icon.png';
+import femaleIcon from '@src/assets/images/female-icon.png';
 import './UserInfoTable.scss';
 
 class UserInfoTable extends React.Component {

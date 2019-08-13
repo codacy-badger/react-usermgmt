@@ -5,7 +5,7 @@ import UserList from './UserList';
 import UserListTable from './user-list-table';
 import UserInfoTableContainer from './user-info-table';
 
-jest.mock('@common/contexts/user-context/WithUserContext');
+jest.mock('@src/common/contexts/user-context/WithUserContext');
 
 describe('UserList', () => {
 	const mockUser = {

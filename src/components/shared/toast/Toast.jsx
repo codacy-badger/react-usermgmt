@@ -9,8 +9,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { amber, green } from '@material-ui/core/colors';
 import { makeStyles } from '@material-ui/core/styles';
-import { withToastContext } from '@common/contexts/toast-context';
-import { toastContextProps } from '@common/prop-types';
+import { withToastContext } from '@src/common/contexts/toast-context';
+import { toastContextProps } from '@src/common/prop-types';
 
 const propTypes = {
 	toastContext: toastContextProps.isRequired

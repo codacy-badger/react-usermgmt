@@ -21,15 +21,7 @@ module.exports = {
 	moduleNameMapper: {
 		'\\.s?css$': 'identity-obj-proxy',
 		'^@src[/](.+)': '<rootDir>/src/$1',
-		'^@api[/](.+)': '<rootDir>/src/api/$1',
-		'^@assets[/](.+)': '<rootDir>/src/assets/$1',
-		'^@common[/](.+)': '<rootDir>/src/common/$1',
-		'^@components[/](.+)': '<rootDir>/src/components/$1',
 		'^@shared[/](.+)': '<rootDir>/src/components/shared/$1',
-		'^@routes[/](.+)': '<rootDir>/src/routes/$1',
-		'^@scss[/](.+)': '<rootDir>/src/scss/$1',
-		'^@services[/](.+)': '<rootDir>/src/services/$1',
-		'^@theme[/](.+)': '<rootDir>/src/theme/$1',
 		'^node-modules[/](.+)': '<rootDir>/node_modules/$1'
 	},
 	setupFiles: [

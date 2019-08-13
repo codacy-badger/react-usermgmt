@@ -2,17 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Formik } from 'formik';
 import uuidv4 from 'uuid/v4';
-import Api from '@api/Api';
-import UserService from '@services/user-service';
+import Api from '@src/api/Api';
+import UserService from '@src/services/user-service';
 import UserForm from './UserForm';
 import FormWrapper from './form-wrapper';
 
 jest.mock('axios');
 jest.mock('uuid/v4');
-jest.mock('@api/Api');
-jest.mock('@services/user-service');
-jest.mock('@common/contexts/toast-context/WithToastContext');
-jest.mock('@common/contexts/user-context/WithUserContext');
+jest.mock('@src/api/Api');
+jest.mock('@src/services/user-service');
+jest.mock('@src/common/contexts/toast-context/WithToastContext');
+jest.mock('@src/common/contexts/user-context/WithUserContext');
 
 jest.mock('react-router-dom', () => ({
 	withRouter: Component => Component

@@ -5,7 +5,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import Modal from './Modal';
 
-jest.mock('@common/contexts/modal-context/WithModalContext');
+jest.mock('@src/common/contexts/modal-context/WithModalContext');
 
 describe('Modal', () => {
 	const setup = action => {

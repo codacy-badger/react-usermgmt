@@ -1,8 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import UserService from '@services/user-service';
-import { UserContext } from '@common/contexts/user-context';
-import Api from '@api/Api';
+import UserService from '@src/services/user-service';
+import { UserContext } from '@src/common/contexts/user-context';
+import Api from '@src/api/Api';
 import App from './App';
 
 class AppContainer extends React.Component {

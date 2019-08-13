@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import constants from '@scss/_constants';
+import constants from '@src/scss/_constants';
 
 const theme = createMuiTheme({
 	typography: {

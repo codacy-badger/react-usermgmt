@@ -1,5 +1,5 @@
-import UserList from '@components/users/user-list';
 import dynamicImport from '@shared/dynamic-import';
+import UserList from '@src/components/users/user-list';
 
 const routes = [
 	{
@@ -9,7 +9,7 @@ const routes = [
 	{
 		path: '/new-user',
 		component: dynamicImport(() =>
-			import(/* webpackChunkName: "newuser" */ '@components/users/new-user')
+			import(/* webpackChunkName: "newuser" */ '@src/components/users/new-user')
 		)
 	}
 ];

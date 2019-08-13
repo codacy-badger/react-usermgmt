@@ -4,7 +4,7 @@ import EditIcon from '@material-ui/icons/EditOutlined';
 import TrashIcon from '@material-ui/icons/DeleteOutlined';
 import UserInfoTable from './UserInfoTable';
 
-jest.mock('@common/contexts/modal-context/WithModalContext');
+jest.mock('@src/common/contexts/modal-context/WithModalContext');
 
 describe('UserInfoTable', () => {
 	const mockUser = {

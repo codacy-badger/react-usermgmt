@@ -5,11 +5,11 @@ import { compose } from 'redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import uuidv4 from 'uuid/v4';
-import UserService from '@services/user-service';
-import { withToastContext } from '@common/contexts/toast-context';
-import { withUserContext } from '@common/contexts/user-context';
-import { toastContextProps, userContextProps, userProps } from '@common/prop-types';
-import Api from '@api/Api';
+import UserService from '@src/services/user-service';
+import { withToastContext } from '@src/common/contexts/toast-context';
+import { withUserContext } from '@src/common/contexts/user-context';
+import { toastContextProps, userContextProps, userProps } from '@src/common/prop-types';
+import Api from '@src/api/Api';
 import FormWrapper from './form-wrapper';
 
 const propTypes = {

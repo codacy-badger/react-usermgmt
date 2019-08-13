@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import UserListTable from './UserListTable';
 
-jest.mock('@common/contexts/user-context/WithUserContext');
+jest.mock('@src/common/contexts/user-context/WithUserContext');
 
 describe('UserListTable', () => {
 	const mockUser = {

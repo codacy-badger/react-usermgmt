@@ -5,8 +5,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
-import { withModalContext } from '@common/contexts/modal-context';
-import { modalContextProps } from '@common/prop-types';
+import { withModalContext } from '@src/common/contexts/modal-context';
+import { modalContextProps } from '@src/common/prop-types';
 import './Modal.scss';
 
 const propTypes = {

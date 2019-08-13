@@ -63,15 +63,7 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.md'],
 		alias: {
 			'@src': APP_DIR,
-			'@api': `${APP_DIR}/api`,
-			'@assets': `${APP_DIR}/assets`,
-			'@common': `${APP_DIR}/common`,
-			'@components': `${APP_DIR}/components`,
 			'@shared': `${APP_DIR}/components/shared`,
-			'@routes': `${APP_DIR}/routes`,
-			'@scss': `${APP_DIR}/scss`,
-			'@services': `${APP_DIR}/services`,
-			'@theme': `${APP_DIR}/theme`,
 			'react-dom': '@hot-loader/react-dom'
 		}
 	}

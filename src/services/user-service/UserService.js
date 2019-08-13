@@ -1,4 +1,4 @@
-import Api from '@api/Api';
+import Api from '@src/api/Api';
 
 const BASE_URL = '/api/users';
 
